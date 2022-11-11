@@ -26,7 +26,7 @@
       </div>
       <div class="row list-mail">
 
-        <div v-if="isLoaded" class="col d-flex justify-content-center">
+        <div v-if="listRandomMail.length === 10" class="col d-flex justify-content-center">
           <ol>
             <li v-for="mail in listRandomMail">
               {{ mail }}

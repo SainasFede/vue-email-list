@@ -7,7 +7,6 @@ createApp({
     return{
       listRandomMail: [],
       limitMail: 10,
-      isLoaded: false
     }
   },
   methods:{
@@ -18,7 +17,6 @@ createApp({
         axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
         .then(mail => {
           this.listRandomMail.push(mail.data.response);
-          this.isLoaded = true;
         })
       }
     }
