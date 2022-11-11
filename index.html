@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://unpkg.com/vue@3"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css' integrity='sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g==' crossorigin='anonymous'/>
+
+  <title>Vue Email List</title>
+</head>
+<body>
+
+  <div id="app">
+    <div class="container d-flex justify-content-center">
+      <div class="row">
+
+        <div class="col d-flex align-items-center justify-content-center">
+          <h1>Email casuali</h1>
+          <button @click="getApi()" class="btn btn-danger mx-5 px-4">Genera</button>
+        </div>
+
+      </div>
+      <div class="row list-mail">
+
+        <div v-if="isLoaded" class="col d-flex justify-content-center">
+          <ol>
+            <li v-for="mail in listRandomMail">
+              {{ mail }}
+            </li>
+          </ol>
+        </div>
+
+        <div v-else class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
+      </div>
+    </div>
+    
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+</html>
